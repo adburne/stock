@@ -1,5 +1,5 @@
-create database inventiolite;
-use inventiolite;
+create database stocklite;
+use stocklite;
 set sql_mode='';
 
 create table user(
