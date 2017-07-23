@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Stock | Dashboard</title>
+    <title>Stock Lite | Dashboard</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
     <link href="plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -41,9 +41,9 @@
         <!-- Logo -->
         <a href="./" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>I</b>L</span>
+          <span class="logo-mini"><b>S</b>L</span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>STOCK</b></span>
+          <span class="logo-lg"><b>STOCK</b>LITE</span>
         </a>
 
         <!-- Header Navbar -->
@@ -176,7 +176,7 @@
       <?php else:?>
 <div class="login-box">
       <div class="login-logo">
-        <a href="./"><b>STOCK</b></a>
+        <a href="./">STOCK<b>LITE</b></a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
         <form action="./?action=processlogin" method="post">
