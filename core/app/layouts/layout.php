@@ -96,18 +96,7 @@
 
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
-<!--
-<div class="user-panel">
-            <div class="pull-left image">
-              <img src="1.jpg" class="img-circle" alt="User Image" />
-            </div>
-            <div class="pull-left info">
-              <p>Alexander Pierce</p>
 
-              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-            </div>
-          </div>
-          -->
           <!-- Sidebar Menu -->
           <ul class="sidebar-menu">
             <li class="header">ADMINISTRACION</li>
@@ -116,7 +105,7 @@
             <li><a href="./?view=sell"><i class='fa fa-usd'></i> <span>Vender</span></a></li>
             <li><a href="./?view=sells"><i class='fa fa-shopping-cart'></i> <span>Ventas</span></a></li>
             <li><a href="./?view=box"><i class='fa fa-cube'></i> <span>Caja</span></a></li>
-            <li><a href="./?view=products"><i class='fa fa-glass'></i> <span>Productos</span></a></li>
+            <li><a href="./?view=products"><i class='fa fa-paperclip'></i> <span>Productos</span></a></li>
 
             <li class="treeview">
               <a href="#"><i class='fa fa-database'></i> <span>Catalogos</span> <i class="fa fa-angle-left pull-right"></i></a>
