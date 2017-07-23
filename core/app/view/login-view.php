@@ -26,7 +26,7 @@ if(isset($_SESSION["user_id"]) && $_SESSION["user_id"]!=""){
 
 <div class="card">
                               <div class="card-header" data-background-color="green">
-                                  <h4 class="title">Acceder a Inventio Lite</h4>
+                                  <h4 class="title">Acceder a Stock</h4>
                               </div>
                 <div class="card-content">
  
