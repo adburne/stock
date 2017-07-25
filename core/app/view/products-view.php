@@ -63,8 +63,8 @@ if($px<=$npaginas):
 		<th>Codigo</th>
 		<th>Imagen</th>
 		<th>Nombre</th>
-		<th>Precio Entrada</th>
-		<th>Precio Salida</th>
+<!--		<th>Precio Entrada</th> -->
+<!--		<th>Precio Salida</th> -->
 		<th>Categoria</th>
 		<th>Minima</th>
 		<th>Activo</th>
@@ -79,8 +79,8 @@ if($px<=$npaginas):
 			<?php endif;?>
 		</td>
 		<td><?php echo $product->name; ?></td>
-		<td>$ <?php echo number_format($product->price_in,2,'.',','); ?></td>
-		<td>$ <?php echo number_format($product->price_out,2,'.',','); ?></td>
+<!--		<td>$ <?php echo number_format($product->price_in,2,'.',','); ?></td> -->
+<!--		<td>$ <?php echo number_format($product->price_out,2,'.',','); ?></td> -->
 		<td><?php if($product->category_id!=null){echo $product->getCategory()->name;}else{ echo "<center>----</center>"; }  ?></td>
 		<td><?php echo $product->inventary_min; ?></td>
 		<td><?php if($product->is_active): ?><i class="fa fa-check"></i><?php endif;?></td>
