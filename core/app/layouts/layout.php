@@ -158,9 +158,9 @@
 
         <footer class="main-footer">
         <div class="pull-right hidden-xs">
-          <b>Version</b> 3.0
+          <b>Version</b> 0.1
         </div>
-        <strong>Copyright &copy; 2016 <a href="http://evilnapsis.com/" target="_blank">Evilnapsis</a></strong>
+        <strong>Copyright &copy; 2017</strong>
       </footer>
       <?php else:?>
 <div class="login-box">
