@@ -113,7 +113,7 @@
               <a href="#"><i class='fa fa-database'></i> <span>Catalogos</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="./?view=categories">Categorias de Productos</a></li>
-                <li><a href="./?view=clients">Clientes</a></li>
+                <li><a href="./?view=clients">Centros de Salud</a></li>
                 <li><a href="./?view=providers">Proveedores</a></li>
               </ul>
             </li>
