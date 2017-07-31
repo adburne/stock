@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-md-12">
 <div class="btn-group pull-right">
-	<a href="index.php?view=newclient" class="btn btn-default"><i class='fa fa-smile-o'></i> Nuevo Cliente</a>
+	<a href="index.php?view=newclient" class="btn btn-default"><i class='fa fa-smile-o'></i> Nuevo Centro de Salud</a>
 <div class="btn-group pull-right">
   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
     <i class="fa fa-download"></i> Descargar <span class="caret"></span>
@@ -11,7 +11,7 @@
   </ul>
 </div>
 </div>
-		<h1>Directorio de Clientes</h1>
+		<h1>Directorio de Centros de Salud</h1>
 <br>
 		<?php
 
@@ -48,7 +48,7 @@
 
 
 		}else{
-			echo "<p class='alert alert-danger'>No hay clientes</p>";
+			echo "<p class='alert alert-danger'>No hay Centros de Salud</p>";
 		}
 
 
