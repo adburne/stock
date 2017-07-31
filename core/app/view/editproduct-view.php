@@ -54,6 +54,7 @@ if($product!=null):
     </div>
   </div>
 
+<!-- Eliminamos Precio de entrada y salida
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-3 control-label">Precio de Entrada*</label>
     <div class="col-md-8">
@@ -66,6 +67,7 @@ if($product!=null):
       <input type="text" name="price_out" class="form-control" id="price_out" value="<?php echo $product->price_out; ?>" placeholder="Precio de salida">
     </div>
   </div>
+-->
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-3 control-label">Unidad*</label>
     <div class="col-md-8">
