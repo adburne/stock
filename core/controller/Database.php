@@ -3,7 +3,7 @@ class Database {
 	public static $db;
 	public static $con;
 	function Database(){
-		$this->user="root";$this->pass="1234";$this->host="localhost";$this->ddbb="stocklite";
+		$this->user="root";$this->pass="1234";$this->host="localhost";$this->ddbb="stock_minsal";
 	}
 
 	function connect(){
