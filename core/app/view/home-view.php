@@ -37,7 +37,7 @@ foreach($products as $product){
             <div class="inner">
               <h3><?php echo count(PersonData::getClients());?></h3>
 
-              <p>Clientes</p>
+              <p>Centros de Salud</p>
             </div>
             <div class="icon">
               <i class="ion ion-stats-bars"></i>

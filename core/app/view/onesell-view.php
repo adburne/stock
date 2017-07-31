@@ -38,7 +38,7 @@ if(isset($_COOKIE["selled"])){
 $client = $sell->getPerson();
 ?>
 <tr>
-	<td style="width:150px;">Cliente</td>
+	<td style="width:150px;">Centro de Salud</td>
 	<td><?php echo $client->name." ".$client->lastname;?></td>
 </tr>
 
