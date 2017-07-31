@@ -1,5 +1,5 @@
-create database stocklite;
-use stocklite;
+create database stock_minsal;
+use stock_minsal;
 set sql_mode='';
 
 create table user(
@@ -13,7 +13,7 @@ create table user(
 	is_active boolean not null default 1,
 	is_admin boolean not null default 0,
 	created_at datetime
-);
+) engine=innodb charset=utf8;
 
 insert into user(name,lastname,email,password,is_active,is_admin,created_at) value ("Administrador", "","admin","90b9aa7e25f80cf4f64e990b78a9fc5ebd6cecad",1,1,NOW());
 
@@ -23,7 +23,7 @@ create table category(
 	name varchar(50),
 	description text,
 	created_at datetime
-);
+) engine innodb charset=utf8;
 
 create table product(
 	id int not null auto_increment primary key,
@@ -42,7 +42,7 @@ create table product(
 	is_active boolean default 1,
 	foreign key (category_id) references category(id),
 	foreign key (user_id) references user(id)
-);
+) engine=InnoDB charset=utf8;
 
 /*
 person kind
@@ -63,13 +63,13 @@ create table person(
 	email2 varchar(50),
 	kind int,
 	created_at datetime
-);
+) engine=InnoDB charset=utf8;
 
 
 create table operation_type(
 	id int not null auto_increment primary key,
 	name varchar(50)
-);
+) engine=InnoDB charset=utf8;
 
 insert into operation_type (name) value ("entrada");
 insert into operation_type (name) value ("salida");
@@ -77,7 +77,7 @@ insert into operation_type (name) value ("salida");
 create table box(
 	id int not null auto_increment primary key,
 	created_at datetime
-);
+) engine=InnoDB charset=utf8;
 
 
 create table sell(
@@ -96,7 +96,7 @@ create table sell(
 	foreign key (user_id) references user(id),
 	foreign key (person_id) references person(id),
 	created_at datetime
-);
+) engine=InnoDB charset=utf8;
 
 create table operation(
 	id int not null auto_increment primary key,
@@ -108,7 +108,7 @@ create table operation(
 	foreign key (product_id) references product(id),
 	foreign key (operation_type_id) references operation_type(id),
 	foreign key (sell_id) references sell(id)
-);
+) engine=InnoDB charset=utf8;
 
 /*
 configuration kind
@@ -122,7 +122,7 @@ create table configuration(
 	name varchar(255) unique,
 	kind int,
 	val varchar(255)
-);
+) engine=InnoDB charset=utf8;
 insert into configuration(short,name,kind,val) value("title","Titulo del Sistema",2,"Inventio Lite");
 insert into configuration(short,name,kind,val) value("use_image_product","Utilizar Imagenes en los productos",1,0);
 insert into configuration(short,name,kind,val) value("active_clients","Activar clientes",1,0);
