@@ -11,12 +11,14 @@
       <input type="text" name="name" class="form-control" id="name" placeholder="Nombre">
     </div>
   </div>
+<!-- Sin apellido
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Apellido*</label>
     <div class="col-md-6">
       <input type="text" name="lastname" required class="form-control" id="lastname" placeholder="Apellido">
     </div>
   </div>
+-->
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Direccion*</label>
     <div class="col-md-6">
