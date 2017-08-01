@@ -26,7 +26,9 @@ if(count($products)>0){
 		<th>Codigo</th>
 		<th>Nombre</th>
 		<th>Unidad</th>
+<!-- Sin precio
 		<th>Precio unitario</th>
+-->
 		<th>En inventario</th>
 		<th>Cantidad</th>
 		<th style="width:100px;"></th>
@@ -41,7 +43,9 @@ $q= OperationData::getQYesF($product->id);
 		<td style="width:80px;"><?php echo $product->id; ?></td>
 		<td><?php echo $product->name; ?></td>
 		<td><?php echo $product->unit; ?></td>
+<!-- Sin precio
 		<td><b>$<?php echo $product->price_in; ?></b></td>
+-->
 		<td>
 			<?php echo $q; ?>
 		</td>
@@ -102,8 +106,10 @@ $total = 0;
 	<th style="width:30px;">Cantidad</th>
 	<th style="width:30px;">Unidad</th>
 	<th>Producto</th>
+<!-- Sin precio
 	<th style="width:30px;">Precio Unitario</th>
 	<th style="width:30px;">Precio Total</th>
+-->
 	<th ></th>
 </thead>
 <?php foreach($_SESSION["reabastecer"] as $p):
@@ -114,8 +120,10 @@ $product = ProductData::getById($p["product_id"]);
 	<td ><?php echo $p["q"]; ?></td>
 	<td><?php echo $product->unit; ?></td>
 	<td><?php echo $product->name; ?></td>
+<!-- Sin precio
 	<td><b>$ <?php echo number_format($product->price_in); ?></b></td>
 	<td><b>$ <?php  $pt = $product->price_in*$p["q"]; $total +=$pt; echo number_format($pt); ?></b></td>
+-->
 	<td style="width:30px;"><a href="index.php?view=clearre&product_id=<?php echo $product->id; ?>" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Cancelar</a></td>
 </tr>
 
@@ -138,13 +146,19 @@ $clients = PersonData::getProviders();
     </div>
   </div>
 <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Efectivo</label>
-    <div class="col-lg-10">
-      <input type="text" name="money" required class="form-control" id="money" placeholder="Efectivo">
+    <label for="inputEmail1" class="col-lg-2 control-label">Remito</label>
+    <div class="col-lg-3">
+      <input type="text" name="remito" required class="form-control" id="remito" placeholder="N° de Remito">
+    </div>
+    <label for="inputEmail1" class="col-lg-2 control-label">Fecha Remito</label>
+    <div class="col-lg-3">
+      <input type="date" name="fecharemito" value="<?php if(isset($_GET["fecharemito"])){ echo $_GET["fecharemito"]; }?>" class="form-control">
     </div>
   </div>
   <div class="row">
 <div class="col-md-6 col-md-offset-6">
+
+<!-- Sin precio
 <table class="table table-bordered">
 <tr>
 	<td><p>Subtotal</p></td>
@@ -158,8 +172,9 @@ $clients = PersonData::getProviders();
 	<td><p>Total</p></td>
 	<td><p><b>$ <?php echo number_format($total); ?></b></p></td>
 </tr>
-
 </table>
+-->
+
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
       <div class="checkbox">
@@ -180,6 +195,8 @@ $clients = PersonData::getProviders();
     </div>
   </div>
 </form>
+
+<!--
 <script>
 	$("#processsell").submit(function(e){
 		money = $("#money").val();
@@ -193,6 +210,8 @@ $clients = PersonData::getProviders();
 		}
 	});
 </script>
+-->
+
 </div>
 </div>
 
