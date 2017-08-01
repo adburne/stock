@@ -5,14 +5,6 @@ if(isset($_SESSION["reabastecer"])){
 
 $process = true;
 
-
-
-
-
-
-
-
-
 //////////////////////////////////
 		if($process==true){
 			$sell = new SellData();
@@ -33,8 +25,13 @@ $process = true;
 			 $op->operation_type_id=1; // 1 - entrada
 			 $op->sell_id=$s[1];
 			 $op->q= $c["q"];
-
-			if(isset($_POST["is_oficial"])){
+            if(isset($_POST["remito"])){
+                $op->remito = $_POST["remito"];
+            }
+            if(isset($_POST["fecharemito"])){
+                $op->remito = $_POST["fecharemito"];
+            }
+            if(isset($_POST["is_oficial"])){
 				$op->is_oficial = 1;
 			}
 
