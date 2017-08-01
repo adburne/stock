@@ -41,8 +41,8 @@ $client = $sell->getPerson();
 	<td style="width:150px;">Proveedor</td>
 	<td><?php echo $client->name." ".$client->lastname;?></td>
 </tr>
-
 <?php endif; ?>
+
 <?php if($sell->user_id!=""):
 $user = $sell->getUser();
 ?>
@@ -51,14 +51,14 @@ $user = $sell->getUser();
 	<td><?php echo $user->name." ".$user->lastname;?></td>
 </tr>
 <?php endif; ?>
+
+
 </table>
 <br><table class="table table-bordered table-hover">
 	<thead>
 		<th>Codigo</th>
 		<th>Cantidad</th>
 		<th>Nombre del Producto</th>
-		<th>Precio Unitario</th>
-		<th>Total</th>
 
 	</thead>
 <?php
@@ -69,14 +69,12 @@ $user = $sell->getUser();
 	<td><?php echo $product->id ;?></td>
 	<td><?php echo $operation->q ;?></td>
 	<td><?php echo $product->name ;?></td>
-	<td>$ <?php echo number_format($product->price_in,2,".",",") ;?></td>
-	<td><b>$ <?php echo number_format($operation->q*$product->price_in,2,".",",");$total+=$operation->q*$product->price_in;?></b></td>
 </tr>
 <?php
 	}
-	?>
+?>
 </table>
-<br><br><h1>Total: $ <?php echo number_format($total,2,'.',','); ?></h1>
+<br><br><h1>Reabastecimiento realizado!</h1>
 	<?php
 
 ?>	
