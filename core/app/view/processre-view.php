@@ -9,7 +9,13 @@ $process = true;
 		if($process==true){
 			$sell = new SellData();
 			$sell->user_id = $_SESSION["user_id"];
-			 if(isset($_POST["client_id"]) && $_POST["client_id"]!=""){
+			if(isset($_POST["remito"])){
+			    $sell->remito = $_POST["remito"];
+			}
+			if(isset($_POST["fecharemito"])){
+			    $sell->fecharemito = $_POST["fecharemito"];
+			}
+			if(isset($_POST["client_id"]) && $_POST["client_id"]!=""){
 			 	$sell->person_id=$_POST["client_id"];
  				$s = $sell->add_re_with_client();
 			 }else{
@@ -25,12 +31,6 @@ $process = true;
 			 $op->operation_type_id=1; // 1 - entrada
 			 $op->sell_id=$s[1];
 			 $op->q= $c["q"];
-            if(isset($_POST["remito"])){
-                $op->remito = $_POST["remito"];
-            }
-            if(isset($_POST["fecharemito"])){
-                $op->remito = $_POST["fecharemito"];
-            }
             if(isset($_POST["is_oficial"])){
 				$op->is_oficial = 1;
 			}
