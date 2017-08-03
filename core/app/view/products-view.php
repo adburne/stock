@@ -72,7 +72,7 @@ if($px<=$npaginas):
 	</thead>
 	<?php foreach($curr_products as $product):?>
 	<tr>
-		<td><?php echo $product->barcode; ?></td>
+		<td><?php echo $product->id; ?></td>
 		<td>
 			<?php if($product->image!=""):?>
 				<img src="storage/products/<?php echo $product->image;?>" style="width:64px;">
