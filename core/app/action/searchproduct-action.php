@@ -10,7 +10,6 @@ if(count($products)>0){
 		<th>Codigo</th>
 		<th>Nombre</th>
 		<th>Unidad</th>
-		<th>Precio unitario</th>
 		<th>En inventario</th>
 		<th>Cantidad</th>
 	</thead>
@@ -26,7 +25,6 @@ $q= OperationData::getQYesF($product->id);
 		<td style="width:80px;"><?php echo $product->id; ?></td>
 		<td><?php echo $product->name; ?></td>
 		<td><?php echo $product->unit; ?></td>
-		<td><b>$<?php echo $product->price_out; ?></b></td>
 		<td>
 			<?php echo $q; ?>
 		</td>
