@@ -77,8 +77,6 @@ $total = 0;
 	<th style="width:30px;">Cantidad</th>
 	<th style="width:30px;">Unidad</th>
 	<th>Producto</th>
-	<th style="width:30px;">Precio Unitario</th>
-	<th style="width:30px;">Precio Total</th>
 	<th ></th>
 </thead>
 <?php foreach($_SESSION["cart"] as $p):
@@ -89,8 +87,6 @@ $product = ProductData::getById($p["product_id"]);
 	<td ><?php echo $p["q"]; ?></td>
 	<td><?php echo $product->unit; ?></td>
 	<td><?php echo $product->name; ?></td>
-	<td><b>$ <?php echo number_format($product->price_out); ?></b></td>
-	<td><b>$ <?php  $pt = $product->price_out*$p["q"]; $total +=$pt; echo number_format($pt); ?></b></td>
 	<td style="width:30px;"><a href="index.php?view=clearcart&product_id=<?php echo $product->id; ?>" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Cancelar</a></td>
 </tr>
 
@@ -163,21 +159,6 @@ $clients = PersonData::getClients();
     </div>
   </div>
 </form>
-<script>
-	$("#processsell").submit(function(e){
-		discount = $("#discount").val();
-		money = $("#money").val();
-		if(money<(<?php echo $total;?>-discount)){
-			alert("No se puede efectuar la operacion");
-			e.preventDefault();
-		}else{
-			if(discount==""){ discount=0;}
-			go = confirm("Cambio: $"+(money-(<?php echo $total;?>-discount ) ) );
-			if(go){}
-				else{e.preventDefault();}
-		}
-	});
-</script>
 </div>
 </div>
 
