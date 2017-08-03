@@ -4,6 +4,8 @@ class SellData {
 
 	public function SellData(){
 		$this->created_at = "NOW()";
+        $this->remito = "";
+        $this->fecharemito = "";
 	}
 
 	public function getPerson(){ return PersonData::getById($this->person_id);}
@@ -16,8 +18,8 @@ class SellData {
 	}
 
 	public function add_re(){
-		$sql = "insert into ".self::$tablename." (user_id,operation_type_id,created_at) ";
-		$sql .= "value ($this->user_id,1,$this->created_at)";
+		$sql = "insert into ".self::$tablename." (user_id,operation_type_id,created_at,remito,fecharemito) ";
+		$sql .= "value ($this->user_id,1,$this->created_at,$this->remito,$this->fecharemito)";
 		return Executor::doit($sql);
 	}
 
@@ -29,8 +31,8 @@ class SellData {
 	}
 
 	public function add_re_with_client(){
-		$sql = "insert into ".self::$tablename." (person_id,operation_type_id,user_id,created_at) ";
-		$sql .= "value ($this->person_id,1,$this->user_id,$this->created_at)";
+		$sql = "insert into ".self::$tablename." (person_id,operation_type_id,user_id,created_at,remito,fecharemito) ";
+		$sql .= "value ($this->person_id,1,$this->user_id,$this->created_at,$this->remito,$this->fecharemito)";
 		return Executor::doit($sql);
 	}
 
