@@ -14,7 +14,7 @@ if(count($products)>0){
 	<thead>
 		<th></th>
 		<th>Producto</th>
-		<th>Total</th>
+		<th>Descripción</th>
 		<th>Fecha</th>
 		<th></th>
 	</thead>
@@ -32,15 +32,11 @@ echo count($operations);
 		<td>
 
 <?php
-$total=0;
 	foreach($operations as $operation){
 		$product  = $operation->getProduct();
-		$total += $operation->q*$product->price_in;
 	}
-		echo "<b>$ ".number_format($total)."</b>";
-
-?>			
-
+		echo "<b>$product->name;</b>";
+?>
 		</td>
 		<td><?php echo $sell->created_at; ?></td>
 		<td style="width:30px;"><a href="index.php?view=delre&id=<?php echo $sell->id; ?>" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a></td>
