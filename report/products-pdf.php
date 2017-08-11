@@ -19,16 +19,20 @@ function Header()
     $this->SetFont('Arial','B',15);
     // Movernos a la derecha
     $this->Cell(40);
-    // Título
-    $this->Cell(120,10,'Productos',1,0,'C');
-
+    $this->Cell(120,10,'Sistema de Stock',0,0,'C');
     // Arial 10
     $this->SetFont('Arial','',10);
     // Fecha y hora del reporte
     $this->Cell(30,5,date("Y-m-d"),0,1,'R');
     $this->Cell(190,5,date("H:i:s"),0,1,'R');
 
-    $this->Ln(10);
+    // Arial bold 15
+    $this->SetFont('Arial','B',15);
+    // Título
+    $this->Cell(40);
+    $this->Cell(120,10,'- Productos -','B',0,'C');
+
+    $this->Ln(15);
 
     // Arial 12 Bold
     $this->SetFont('Arial','B',12);
@@ -39,7 +43,7 @@ function Header()
     // Titulos
     // Arial 12 Bold
     $this->SetFont('Arial','B',10);
-    $w = array(10, 50, 15, 45, 30, 27, 12);
+    $w = array(10, 70, 15, 25, 30, 27, 12);
     $header= array('Id', 'Nombre', 'Unidad', 'Presentación', 'Categoría', 'Mín. inventario','Activo');
     for($i=0;$i<count($header);$i++)
         $this->Cell($w[$i],7,utf8_decode($header[$i]),1,0,'C',false);
@@ -66,7 +70,7 @@ $pdf->AddPage();
 $pdf->SetFont('Times','',12);
 
 $fill = false;
-$w = array(10, 50, 15, 45, 30, 27, 12);
+$w = array(10, 70, 15, 25, 30, 27, 12);
 foreach($products as $product)
 {
     $pdf->Cell($w[0],6,$product->id,'LR',0,'L',$fill);
@@ -85,7 +89,6 @@ foreach($products as $product)
         $pdf->Cell($w[6],6,"No",'LR',0,'L',$fill);
     }
     $pdf->Ln();
-    $fill = !$fill;
 }
 $pdf->Output();
 ?>
