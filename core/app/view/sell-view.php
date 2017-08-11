@@ -87,7 +87,7 @@ $product = ProductData::getById($p["product_id"]);
 	<td ><?php echo $p["q"]; ?></td>
 	<td><?php echo $product->unit; ?></td>
 	<td><?php echo $product->name; ?></td>
-	<td style="width:30px;"><a href="index.php?view=clearcart&product_id=<?php echo $product->id; ?>" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Cancelar</a></td>
+	<td style="width:30px;"><a href="index.php?view=clearcart&product_id=<?php echo $product->id; ?>" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Quitar</a></td>
 </tr>
 
 <?php endforeach; ?>
@@ -108,22 +108,31 @@ $clients = PersonData::getClients();
     	</select>
     </div>
   </div>
+
 <div class="form-group">
+<!--
     <label for="inputEmail1" class="col-lg-2 control-label">Descuento</label>
+-->
     <div class="col-lg-10">
-      <input type="text" name="discount" class="form-control" required value="0" id="discount" placeholder="Descuento">
+      <input type="hidden" name="discount" class="form-control" required value="0" id="discount" placeholder="Descuento">
     </div>
-  </div>
- <div class="form-group">
+</div>
+
+<!--
+<div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Efectivo</label>
     <div class="col-lg-10">
       <input type="text" name="money" required class="form-control" id="money" placeholder="Efectivo">
     </div>
-  </div>
-      <input type="hidden" name="total" value="<?php echo $total; ?>" class="form-control" placeholder="Total">
+</div>
+-->
 
-  <div class="row">
+<input type="hidden" name="total" value="<?php echo $total; ?>" class="form-control" placeholder="Total">
+
+<div class="row">
 <div class="col-md-6 col-md-offset-6">
+
+<!--
 <table class="table table-bordered">
 <tr>
 	<td><p>Subtotal</p></td>
@@ -137,8 +146,9 @@ $clients = PersonData::getClients();
 	<td><p>Total</p></td>
 	<td><p><b>$ <?php echo number_format($total); ?></b></p></td>
 </tr>
-
 </table>
+-->
+
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
       <div class="checkbox">
@@ -153,7 +163,7 @@ $clients = PersonData::getClients();
       <div class="checkbox">
         <label>
 		<a href="index.php?view=clearcart" class="btn btn-lg btn-danger"><i class="glyphicon glyphicon-remove"></i> Cancelar</a>
-        <button class="btn btn-lg btn-primary"><i class="glyphicon glyphicon-usd"></i><i class="glyphicon glyphicon-usd"></i> Finalizar Venta</button>
+        <button class="btn btn-lg btn-primary"></i> Finalizar Entrega</button>
         </label>
       </div>
     </div>

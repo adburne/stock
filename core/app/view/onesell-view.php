@@ -7,7 +7,7 @@
     <li><a href="report/onesell-word.php?id=<?php echo $_GET["id"];?>">Word 2007 (.docx)</a></li>
   </ul>
 </div>
-<h1>Resumen de Venta</h1>
+<h1>Resumen de Entrega</h1>
 <?php if(isset($_GET["id"]) && $_GET["id"]!=""):?>
 <?php
 $sell = SellData::getById($_GET["id"]);
@@ -57,9 +57,9 @@ $user = $sell->getUser();
 		<th>Codigo</th>
 		<th>Cantidad</th>
 		<th>Nombre del Producto</th>
-		<th>Precio Unitario</th>
+<!--		<th>Precio Unitario</th>
 		<th>Total</th>
-
+-->
 	</thead>
 <?php
 	foreach($operations as $operation){
@@ -69,8 +69,10 @@ $user = $sell->getUser();
 	<td><?php echo $product->id ;?></td>
 	<td><?php echo $operation->q ;?></td>
 	<td><?php echo $product->name ;?></td>
+<!--
 	<td>$ <?php echo number_format($product->price_out,2,".",",") ;?></td>
 	<td><b>$ <?php echo number_format($operation->q*$product->price_out,2,".",",");$total+=$operation->q*$product->price_out;?></b></td>
+-->
 </tr>
 <?php
 	}
@@ -79,6 +81,8 @@ $user = $sell->getUser();
 <br><br>
 <div class="row">
 <div class="col-md-4">
+
+<!--
 <table class="table table-bordered">
 	<tr>
 		<td><h4>Descuento:</h4></td>
@@ -93,6 +97,7 @@ $user = $sell->getUser();
 		<td><h4>$ <?php echo number_format($total-	$sell->discount,2,'.',','); ?></h4></td>
 	</tr>
 </table>
+-->
 </div>
 </div>
 <?php else:?>
